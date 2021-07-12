@@ -41,6 +41,12 @@ To run any admin command, view the files, ...:
 $ docker exec -it opensim bash
 ```
 
+To load the isus region (execute inside the OpenSimulator CLI):
+
+```
+Region (MyRegion) # load oar isus.oar
+```
+
 NOTE: Currently, you may not be able to terminate the docker container even if you 'quit' the console. You'll need to run `docker stop` command from another terminal to kill the container.
 
 ### Connecting

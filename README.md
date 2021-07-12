@@ -26,7 +26,7 @@ $ docker build -t opensim .
 You will need to forward both TCP and UDP port 9000 to your host.
 
 ```
-$ docker run --name=opensim -p 9000:9000 -p 9000:9000/udp -d opensim
+$ docker run --name=opensim --rm -p 9000:9000 -p 9000:9000/udp -d opensim
 ```
 
 To see the console logs:
@@ -49,8 +49,17 @@ Login URI should look like this.
 
 http://localhost:9000/
 
-If you use Docker Toolbox or other hosts than localhost, you'll need to modify "localhost" so that it will be the same as your docker machine host name or ip. You may need to change the value of "ExternalHostName" in Regions.ini file as well. After changing, rebuild this image.
+If you use Docker Toolbox or other hosts than localhost, you'll need to modify "localhost" so that it will be the same as your docker machine host name or ip. You may need to change the value of "ExternalHostName" in Regions.ini file as well. After changing, rebuild this image. For mac and windows, I suggest to use Dayturn Viewer (https://www.dayturn.com/viewer/index.php).
+
+![img](https://i.imgur.com/Ups8CSR.png)
+
+- Username: Test User
+- Password: password
 
 ### Maintainer
 
-Makopoppo (SL Name: Mako Nozaki)
+Christophe Soares (soareschristophe@gmail.com)
+
+### Credits to
+
+Makopoppo (SL Name: Mako Nozaki) (https://github.com/Makopo/docker-opensimulator-simple)

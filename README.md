@@ -2,10 +2,10 @@
 
 It is based on [official mono docker image](https://hub.docker.com/r/library/mono/).
 
-* [OpenSimulator](http://opensimulator.org) 0.9.0.1
-* Standalone Mode (port 9000)
-* Username: Test User 
-* Password: password
+- [OpenSimulator](http://opensimulator.org) 0.9.1.1
+- Standalone Mode (port 9000)
+- Username: Test User
+- Password: password
 
 See [OpenSim.ini.example](https://github.com/opensim/opensim/blob/master/bin/OpenSim.ini.example) and [Regions.ini.example](https://github.com/opensim/opensim/blob/master/bin/Regions/Regions.ini.example) for available settings.
 
@@ -50,7 +50,6 @@ Login URI should look like this.
 http://localhost:9000/
 
 If you use Docker Toolbox or other hosts than localhost, you'll need to modify "localhost" so that it will be the same as your docker machine host name or ip. You may need to change the value of "ExternalHostName" in Regions.ini file as well. After changing, rebuild this image.
-
 
 ### Maintainer
 

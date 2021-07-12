@@ -1,9 +1,13 @@
 FROM mono:5.16
 
-RUN curl http://dist.opensimulator.org/opensim-0.9.0.1.tar.gz -s | tar xzf -
-ADD Regions.ini /opensim-0.9.0.1/bin/Regions/
-ADD OpenSim.ini /opensim-0.9.0.1/bin/
+# wget -qO- http://opensimulator.org/wiki/Download | grep -Eoi '([^"]+?[0-9].tar.gz)' | head -1 
+RUN curl http://opensimulator.org/dist/opensim-0.9.1.1.tar.gz -s | tar xzf -
+
+RUN mv opensim-* opensim
+ADD Regions.ini /opensim/bin/Regions/
+ADD OpenSim.ini /opensim/bin/
+COPY isus.oar /opensim/bin/
 EXPOSE 9000
-WORKDIR /opensim-0.9.0.1/bin
+WORKDIR /opensim/bin
 
 CMD [ "mono",  "./OpenSim.exe" ]

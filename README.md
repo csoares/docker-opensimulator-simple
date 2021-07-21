@@ -28,13 +28,13 @@ docker build -t opensim .
 You will need to forward both TCP and UDP port 9000 to your host.
 
 ```
-docker run --name=opensim --rm -p 9000:9000 -p 9000:9000/udp -d opensim
+docker run --name=opensim --rm -v $(pwd)/oar:/opensim/bin/oar -p 9000:9000 -p 9000:9000/udp -d opensim
 ```
 
-or interactive mode with access to OpenSim CLI
+or interactive mode with access to OpenSim CLI using a shared volume
 
 ```
-docker run --name=opensim --rm -it -p 9000:9000 -p 9000:9000/udp opensim
+docker run --name=opensim --rm -it -v $(pwd)/oar:/opensim/bin/oar -p 9000:9000 -p 9000:9000/udp opensim
 ```
 
 To see the console logs:
@@ -52,7 +52,13 @@ docker exec -it opensim bash
 To load the isus region (execute inside the OpenSimulator CLI):
 
 ```
-Region (MyRegion) # load oar isus.oar
+Region (MyRegion) # load oar oar/isus.oar
+```
+
+To save the a region (execute inside the OpenSimulator CLI):
+
+```
+Region (MyRegion) # save oar oar/[NAME_OF_THE_FILE].oar
 ```
 
 To create user (execute inside the OpenSimulator CLI) and answer the respective questions:

@@ -8,7 +8,8 @@ ADD Regions.ini /opensim/bin/Regions/
 ADD OpenSim.ini /opensim/bin/
 ADD Standalone.ini /opensim/bin/config-include/Standalone.ini
 ADD StandaloneCommon.ini /opensim/bin/config-include/StandaloneCommon.ini
-COPY isus.oar /opensim/bin/
+RUN mkdir /opensim/bin/oar/
+COPY oar/isus.oar /opensim/bin/oar/
 EXPOSE 9000
 WORKDIR /opensim/bin
 
